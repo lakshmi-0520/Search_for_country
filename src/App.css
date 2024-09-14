@@ -1,0 +1,122 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f7;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content closer to the top */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6e85b7, #b8c6db);
+  padding-top: 60px; /* Adds padding to push the content down from the top */
+}
+
+h1 {
+  color: #4a4a4a;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+/* SearchBar.css */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px; /* Optional: adjust space between the title and search bar */
+}
+
+.search-bar-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Adjust to control the space between the icon and the border */
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #141414;
+  pointer-events: none; /* Ensures icon doesn't interfere with input click */
+}
+
+.microphone-icon, .camera-icon {
+  position: absolute;
+  top: 25%;
+  font-size: 20px;
+  color: #141414;
+  cursor: pointer; /* Make it look clickable */
+}
+
+.microphone-icon {
+  right: 50px; /* Adjust to space it from the camera icon */
+}
+
+.camera-icon {
+  right: 15px; /* Adjust to position it at the end of the search bar */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 15px 75px 15px 45px; /* Adjust padding to make space for both icons */
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 60px; /* Decreased from 70px to 50px */
+  width: 100%;
+  max-width: 600px; /* Match width of search bar */
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.suggestion-item i {
+  margin-right: 10px; /* Space between the icon and text */
+  font-size: 18px; /* Adjust size of the icon */
+  color: #392e03;
+}
+.suggestion-item:hover {
+  background-color: #e0e0e0; /* Light gray background on hover */
+  color: #c712a9; /* Darken text color */
+  transform: translateX(5px); /* Add a subtle movement to the right */
+}
+
+.suggestion-item strong {
+  color: #333;
+}
+
+.suggestions-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb {
+  background-color: #6e85b7;
+  border-radius: 10px;
+}
